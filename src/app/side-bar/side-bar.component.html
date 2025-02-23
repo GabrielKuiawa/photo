@@ -1,28 +1,30 @@
 <div class="flex h-screen  justify-content-between border-200"
-  [ngClass]="isSmallScreen ? ['w-screen','h-auto','border-right-none','border-top-2','p-3','fixed','bottom-0','left-0'] : ['border-right-1','flex-column','p-2']">
+  [ngClass]="isSmallScreen ? ['w-screen','h-auto','border-right-none','border-top-2','p-3','fixed','bottom-0','left-0','z-5','bg-white'] : ['border-right-1','flex-column','p-3']">
   <div class="flex"
     [ngClass]="isSmallScreen ? ['w-screen','h-auto','justify-content-evenly','gap-3'] : ['flex-column','gap-4']">
-    <div class="bg-white w-4rem h-4rem flex align-items-center justify-content-center cursor-pointer" *ngIf="!isSmallScreen"></div>
-    <div class="hover:bg-indigo-50 border-round w-4rem h-4rem flex align-items-center justify-content-center cursor-pointer" (click)="selectIcon(1)"
+    <div class="bg-white w-3rem h-3rem flex align-items-center justify-content-center cursor-pointer" *ngIf="!isSmallScreen">
+      <img style="width: 1.5rem;" src="circulo-de-estacionamento.svg" alt="">
+    </div>
+    <div class="hover:bg-indigo-50 border-round w-3rem h-3rem flex align-items-center justify-content-center cursor-pointer" (click)="selectIcon(1)"
       [ngClass]="getIconClasses(1)" [routerLink]="['']">
       <span class="pi pi-home" style="font-size: 1.5rem;"></span>
     </div>
-    <div class="hover:bg-indigo-50 border-round w-4rem h-4rem flex align-items-center justify-content-center cursor-pointer" (click)="selectIcon(2)"
+    <div class="hover:bg-indigo-50 border-round w-3rem h-3rem flex align-items-center justify-content-center cursor-pointer" (click)="selectIcon(2)"
       [ngClass]="getIconClasses(2)" [routerLink]="['create']">
       <span class="pi pi-plus" style="font-size: 1.5rem"></span>
     </div>
-    <div class="hover:bg-indigo-50 border-round w-4rem h-4rem cursor-pointer justify-content-center align-items-center flex" (click)="selectIcon(3)"
+    <div class="hover:bg-indigo-50 border-round w-3rem h-3rem cursor-pointer justify-content-center align-items-center flex" (click)="selectIcon(3)"
       [ngClass]="getIconClasses(3)" [routerLink]="['categoy']">
       <span class="pi pi-compass" style="font-size: 1.5rem"></span>
     </div>
-    <div class="hover:bg-indigo-50 border-round w-4rem h-4rem cursor-pointer justify-content-center align-items-center flex" *ngIf="isSmallScreen" (click)="selectIcon(4)"
+    <div class="hover:bg-indigo-50 border-round w-3rem h-3rem cursor-pointer justify-content-center align-items-center flex" *ngIf="isSmallScreen" (click)="selectIcon(4)"
       [ngClass]="getIconClasses(4)" [routerLink]="['user']">
       <span class="pi pi-user" style="font-size: 1.5rem;"></span>
     </div>
   </div>
 
   <div [class.hidden]="isSmallScreen">
-    <div class="hover:bg-indigo-50 border-round w-4rem h-4rem flex align-items-center justify-content-center cursor-pointer" (click)="selectIcon(4)"
+    <div class="hover:bg-indigo-50 border-round w-3rem h-3rem flex align-items-center justify-content-center cursor-pointer" (click)="selectIcon(4)"
       [ngClass]="getIconClasses(4)" [routerLink]="['user']">
       <span class="pi pi-cog" style="font-size: 1.5rem"></span>
     </div>

@@ -1,1 +1,31 @@
-<p>home works!</p>
+<div class="flex flex-column ">
+  <div class="card flex justify-content-between px-3 align-items-center p-2">
+    <p-iconfield class="w-full">
+      <p-inputicon styleClass="pi pi-search" />
+      <input class="w-full" type="text" pInputText placeholder="Search" [(ngModel)]="value" />
+    </p-iconfield>
+  </div>
+  <p-scrollpanel [style]="{ height: '100vh' }" >
+    <div class="images p-0"  [ngStyle]="{'column-count': columnCount}">
+      <ng-container *ngFor="let image of images">
+        <p-image [preview]="true" [imageStyle]="{
+          height: 'auto',
+          margin: '0 0 0 0',
+          'min-height': '15rem',
+          'border-radius': '20px',
+          'break-inside': 'avoid-column',
+          'padding' : '10px',
+          'width': width
+        }" [src]="'images/' + image.pathImage" alt="{{ image.filename }}">
+          <ng-template #preview let-style="style" let-previewCallback="previewCallback">
+            <div class="flex">
+              <img style="height: 95vh;" [src]="'images/' + image.pathImage" alt="image" [style]="style" (click)="previewCallback()" />
+              <p>teste333333333</p>
+            </div>
+          </ng-template>
+        </p-image>
+      </ng-container>
+    </div>
+
+  </p-scrollpanel>
+</div>
