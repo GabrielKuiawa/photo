@@ -1,1 +1,22 @@
-<p>create-image works!</p>
+
+
+<div class="w-full h-screen">
+  <app-search></app-search>
+
+  <div class="flex align-items-center justify-content-center h-full w-full bg-black-alpha-50">
+    <div class="flex">
+      <p-fileUpload name="demo[]" url="./upload" accept="image/*" maxFileSize="1000000" auto="true"></p-fileUpload>
+      <div>
+        <h2>
+          Descrição
+        </h2>
+        <h2>
+          Categoria
+          <div class="card flex justify-center">
+            <!-- <p-select [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" placeholder="Select a City" class="w-full md:w-56" /> -->
+        </div>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>

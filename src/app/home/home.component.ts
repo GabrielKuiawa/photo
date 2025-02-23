@@ -3,11 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { ImageModule } from 'primeng/image';
-import { InputTextModule } from 'primeng/inputtext';
-import { FormsModule } from '@angular/forms';
-import { IconFieldModule } from 'primeng/iconfield';
-import { InputIconModule } from 'primeng/inputicon';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
+import { SearchComponent } from "../search/search.component";
 
 @Component({
   selector: 'app-home',
@@ -15,11 +12,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
     CommonModule,
     ScrollPanelModule,
     ImageModule,
-    InputTextModule,
-    FormsModule,
-    IconFieldModule,
-    InputIconModule
-  ],
+    SearchComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -29,10 +23,9 @@ export class HomeComponent implements OnInit {
   width: string = '11rem'
 
   constructor(private http: HttpClient,private breakpointObserver: BreakpointObserver) {}
-  value: string | undefined;
 
   ngOnInit(): void {
-    this.http.get<any[]>('http://localhost:3000/api/image')
+    this.http.get<any[]>('http://192.168.3.103:3000/api/image')
       .subscribe(data => {
         this.images = data;
     });

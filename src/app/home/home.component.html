@@ -1,10 +1,5 @@
 <div class="flex flex-column ">
-  <div class="card flex justify-content-between px-3 align-items-center p-2">
-    <p-iconfield class="w-full">
-      <p-inputicon styleClass="pi pi-search" />
-      <input class="w-full" type="text" pInputText placeholder="Search" [(ngModel)]="value" />
-    </p-iconfield>
-  </div>
+  <app-search></app-search>
   <p-scrollpanel [style]="{ height: '100vh' }" >
     <div class="images p-0"  [ngStyle]="{'column-count': columnCount}">
       <ng-container *ngFor="let image of images">

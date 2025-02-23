@@ -1,0 +1,12 @@
+h2 {
+  color: #333;
+  font-weight: normal;
+}
+
+.p-fileupload {
+  width: 100%;
+}
+
+.p-inputtextarea, .p-inputtext {
+  width: 100%;
+}
